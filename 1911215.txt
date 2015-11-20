@@ -1,0 +1,9 @@
+19/11/2015
+- Penetration testing plural sight ![Link](https://app.pluralsight.com/library/courses/kali-linux-penetration-testing-ethical-hacking/table-of-contents)
+- Aircrack-ng main tool 
+
+####TODO:
+- RaspberryPi klaarmaken met kali op
+- Films zien op pluralsight - penetration testing - Gus Khawaja
+	- Wi-fi Penetration Testing 
+	- Network sniffing
