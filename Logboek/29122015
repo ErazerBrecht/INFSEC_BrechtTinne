@@ -1,0 +1,42 @@
+#29/12/2015
+
+Kali OS bevat standaard een versie van MITMf die via apt-get install MITMf geïnstaleerd kan worden.
+Volgens de autheur van MITMf loopt deze versie echt wat achter op de laatste patches.
+
+We hadden gisteren af en toe problemen dat MITMf crashte en hoppen dit nu zo op te lossen...
+
+We hebben dus de laatste versie via GitHub gedownload en de installatie instructies gevolgd.
+
+####Problemen installatie:
+- Kon source /usr/bin/virtualenvwrapper.sh niet vinden
+- Wat is .bashrc?
+
+####Nieuwe zaken geleerd (CMD) tijdens testen: 
+- arp -d -a  </br> Alle bestaande ARP gegevens verwijderen 
+- ipconfig /flushdns </br> DNS cache leegmaken
+
+####Problemen:
+- TODO
+
+Conclusie: Gigantisch gefaald
+
+Met Andere "modes" van MITMf gespeeld.
+- Image rotate (upsidedownternet)
+- Screen (Screen capture => html page)
+- JSkeylogger => Didn't work
+
+FilePwn => .exe, .zip, ... bestanden automatisch voorzien van backdoor.
+
+TODO: BLALALA
+
+- Geen verbindng met Metasploit => BLABALA
+- Kon payload niet vinden => BLABALA
+- Kon exe niet updaten (nieuwe versie)
+- Geen meterpreter sessie
+
+Werkte niet....
+
+Subterfuge geprobeerd.
+multivaluedictkeyerror
+Django “You have unapplied migrations”
+Gigantisch gefaald!
