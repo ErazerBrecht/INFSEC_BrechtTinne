@@ -20,10 +20,10 @@ export SSID
 export CMAC
 # Confirm the argument enter
 if [ -z $1 ]
-then echo "Usage: APWEPhack.sh  <interface>"
+then echo "Usage: CrackTheWifi.sh  <interface>"
 echo "Please, Enter the interface to use for the crack"
-echo "Example, ./APWEPhach.sh wlan0mon"
-echo "Set interface in MONITOR mode : airmon-ng start interface."
+echo "Example, ./CrackTheWifi.sh wlan0mon"
+echo "Set interface in MONITOR mode: airmon-ng start interface."
 exit
 fi
 
