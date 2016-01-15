@@ -17,7 +17,7 @@ Brecht Carlier en Tinne Van den Abbeele
 
 ## Opdracht
 De opdracht is om door middel van een Raspberry Pi draadloze netwerken te hacken. We moesten WPA kraken, paswoord sniffing doen en andere zaken die we zelf mochten kiezen en uitbreiden (pentetration testing).
-De bedoeling van dit project was eigenlijk dat we verder werkten aan het project van vorig jaar. Wij hebben samen gekozen om dit niet te doen en van 0 terug te beginnen. Zo leeren we het meest. Een WiFi script kopiëren kan iedereen, er een bouwen en snappen is al veel moeilijker!
+De bedoeling van dit project was eigenlijk dat we verder werkten aan het project van vorig jaar. Wij hebben samen gekozen om dit niet te doen en van 0 terug te beginnen. Zo leeren we het meest. Een WiFi script kopiÃ«ren kan iedereen, er een bouwen en snappen is al veel moeilijker!
 
 # 19/11/2015
 
@@ -36,7 +36,7 @@ De bedoeling van dit project was eigenlijk dat we verder werkten aan het project
 # 25/11/2015
 
 Een paar voorbereidingen gedaan
-- KaliOS op RaspBerry PI2 geïnstalleerd
+- KaliOS op RaspBerry PI2 geÃ¯nstalleerd
 - Updated KaliOS
 - SSH geconfigureerd
 - eth0 geconfigureerd met static ip
@@ -134,7 +134,7 @@ Nu komen we terug op het eerste scherm terecht. We gebruiken het commando clear 
 
 **Problemen**
 
-De eerste keer werkt het niet. Dit kwam doordat er niemand verbonden was met onze Wifi (TinneBrecht). Om ervoor te zorgen dat de hack lukt, moet er minstens één host geconnecteerd zijn, om deze reden dat we verkeer nodig hebben binnen ons netwerk. Hoe meer verkeer, hoe makkelijker we de IV's kunnen kraken. Wanneer er iemand op het netwerk is zullen wij (attacker) zijn MAC address spoofen om ervoor te zorgen dat het acces punt denkt dat we de computer(host) zijn. nu kunnen we ook pakketten verzenden naar het acces punt om de hack te versnellen.
+De eerste keer werkt het niet. Dit kwam doordat er niemand verbonden was met onze Wifi (TinneBrecht). Om ervoor te zorgen dat de hack lukt, moet er minstens Ã©Ã©n host geconnecteerd zijn, om deze reden dat we verkeer nodig hebben binnen ons netwerk. Hoe meer verkeer, hoe makkelijker we de IV's kunnen kraken. Wanneer er iemand op het netwerk is zullen wij (attacker) zijn MAC address spoofen om ervoor te zorgen dat het acces punt denkt dat we de computer(host) zijn. nu kunnen we ook pakketten verzenden naar het acces punt om de hack te versnellen.
 
 Bronnen:
 - Pluralsight video
@@ -146,7 +146,7 @@ Volgende keer:
 
 # 7/12/2015
 
-- TightVNC server geïnstalleerd op de Raspberry PI!</br> Dit kan handig zijn wanneer we de GUI nodig hebben. Ook handig wanneer we geen extra scherm ter beschikking hebben. Wat op school 99% van de tijd het geval is. Op te starten met tightvncserver. Het passwoord is ciscocisco. </br> VNC is een methode om het bureablad van een remote computer (via het netwerk verbonden) te delen. We kunnen ook onze muis en toestenbord bedienen van de host via je client! VNC is een open 'protocol' en er bestaan zeer veel clients. Omdat wij op de RPi gebruik maakten van TightVNC, doen we dit ook op onze Windows computer (uiteraard dan de client versie).
+- TightVNC server geÃ¯nstalleerd op de Raspberry PI!</br> Dit kan handig zijn wanneer we de GUI nodig hebben. Ook handig wanneer we geen extra scherm ter beschikking hebben. Wat op school 99% van de tijd het geval is. Op te starten met tightvncserver. Het passwoord is ciscocisco. </br> VNC is een methode om het bureablad van een remote computer (via het netwerk verbonden) te delen. We kunnen ook onze muis en toestenbord bedienen van de host via je client! VNC is een open 'protocol' en er bestaan zeer veel clients. Omdat wij op de RPi gebruik maakten van TightVNC, doen we dit ook op onze Windows computer (uiteraard dan de client versie).
 
 - Een paar WEP cracking scripts opgezocht ter inspiratie. ([LINK](http://www.itsecurenet.com/crack-wifi-wep-password-script-backtrack/))
 
@@ -163,11 +163,11 @@ Volgende keer:
 ## Steps/Commands
 
 ### **WPA**
-WiFi Protected Access (WPA) is een draadloos beveiligingsprotocol die bedoeld is om de veiligheids tekortkomingen van WEP ‘op te lossen’. Doordat de WPA protocollen dynamisch voor elk pakketje een nieuwe sleutel genereren, voorkomen ze de statische analyse die ervoor zorgde dat WEP faalde.
+WiFi Protected Access (WPA) is een draadloos beveiligingsprotocol die bedoeld is om de veiligheids tekortkomingen van WEP Â‘op te lossenÂ’. Doordat de WPA protocollen dynamisch voor elk pakketje een nieuwe sleutel genereren, voorkomen ze de statische analyse die ervoor zorgde dat WEP faalde.
 WPA wordt vaak ingezet met een vooraf gedeelde sleutel (PreShared Key (PSK)) om de communicatie tussen het acces punt en de draadloze clients te beveiligen. De PSK moet een willekeurige zin zijn van ten minste 13 tekens lang. Zo niet, dan is het mogelijk om de PSK te bepalen door een brute force attack uit te voeren. Dit gebeurt door de PSK te vergelijken met een gekende woordenboek. WPA1 was een noodoplossing voor WEP, WPA moest werken op dezelfde hardware als WEP toestellen. Later is  WPA2 volledig doorgebroken, dit heeft betere beveiling maar is niet meer compatibel met de oudere hardware!
 
 **Venster 1**
-De eerste stap is om een monitor interface te creëren met behulp van het *airmon-ng* commando. Monitor interface betekend dat hij de pakketjes die niet voor hem bestemt zijn toch zal deencapsuleren. Nu kun je dus de data van heel het draadloos netwerk zijn! Voordat u de monitor interface mode start moet de netwerkbeheerder service stopgezet worden. Nu kunnen we beginnen. het *airodump-ng* commando zal alle beschikbare toegangspunten in zijn range oplijsten. Wanneer u uw doelgroep gevonden hebt stop je de actie door *ctrl+c* te doen.
+De eerste stap is om een monitor interface te creÃ«ren met behulp van het *airmon-ng* commando. Monitor interface betekend dat hij de pakketjes die niet voor hem bestemt zijn toch zal deencapsuleren. Nu kun je dus de data van heel het draadloos netwerk zijn! Voordat u de monitor interface mode start moet de netwerkbeheerder service stopgezet worden. Nu kunnen we beginnen. het *airodump-ng* commando zal alle beschikbare toegangspunten in zijn range oplijsten. Wanneer u uw doelgroep gevonden hebt stop je de actie door *ctrl+c* te doen.
 De *--showack* is er om ervoor te zorgen dat de client computer jouw verzoek bevestigd.  Het *-w* argument is om de output weg te schrijven naar een file. Open een ander scherm maar sluit dit scherm nog niet. 
 > service network-manager stop
 > airmon-ng start "INTERFACE"
@@ -176,8 +176,8 @@ De *--showack* is er om ervoor te zorgen dat de client computer jouw verzoek bev
 
 
 **Nieuw venster**
-In dit venster zullen we een de-authenticatie aanval lanceren. Deze aanval zal de gebruiker dwingen zich opnieuw te authentiseren (connecteert automatisch -> windows default settings) naar het doel acces punt en om de WPA sleutel opnieuw uit te wisselen. We maken gebruik van *airplay-ng* voor de de-authenticatie aanval. *0* geeft aan dat we een de-authenticatie aanval lanceren. *20* geeft aan dat we 20 de-authenticatie pakketjes versturen. De *-a* en *-c* zijn de BSSID en het cliënt mac adres.
-Wanneer we terug gaan naar ons eerste scherm kunnen we zien da er een 4 way handshake is vastgelegd. Deze handshake toont zich in de rechte boven hoek van he scherm (“WPA handshake”).
+In dit venster zullen we een de-authenticatie aanval lanceren. Deze aanval zal de gebruiker dwingen zich opnieuw te authentiseren (connecteert automatisch -> windows default settings) naar het doel acces punt en om de WPA sleutel opnieuw uit te wisselen. We maken gebruik van *airplay-ng* voor de de-authenticatie aanval. *0* geeft aan dat we een de-authenticatie aanval lanceren. *20* geeft aan dat we 20 de-authenticatie pakketjes versturen. De *-a* en *-c* zijn de BSSID en het cliÃ«nt mac adres.
+Wanneer we terug gaan naar ons eerste scherm kunnen we zien da er een 4 way handshake is vastgelegd. Deze handshake toont zich in de rechte boven hoek van he scherm (Â“WPA handshakeÂ”).
 Zodra we deze handshake hebben, kunnen we beginnen met kraken. We zullen de *aircrack-ng* gebruiken om de WPA-sleutel met behulp van een gedefinieerde woordenlijst te kraken (bruteforce).
 
 > aireplay-ng -0 20 -a "BSSID" -c "HOSTMAC" "INTERFACE"
@@ -186,14 +186,14 @@ Zodra we deze handshake hebben, kunnen we beginnen met kraken. We zullen de *air
 > aircrack-ng wpa_log-01.cap -w "path to wordlist"
 
 * ***"wpa_log-01.cap"*** = Logbestand waar airodump elk packetje in zet. Deze naam kan gewijzigd worden met het *-w* commando.
-* ***"path to wordlist"*** = WPA heeft de zwakte met IV’s niet zoals WEP ze heeft (zie theorie). Daarom moeten we het wachtwoord bruteforcen. De woordenlijst is een tekstbestand met mogelijkheden (veelvoorkomende wachtwoorden). Een voorbeeld is [rockyou](http://scrapmaker.com/download/data/wordlists/dictionaries/rockyou.txt)
+* ***"path to wordlist"*** = WPA heeft de zwakte met IVÂ’s niet zoals WEP ze heeft (zie theorie). Daarom moeten we het wachtwoord bruteforcen. De woordenlijst is een tekstbestand met mogelijkheden (veelvoorkomende wachtwoorden). Een voorbeeld is [rockyou](http://scrapmaker.com/download/data/wordlists/dictionaries/rockyou.txt)
 
 ### Some comments
 
 We hebben dit niet gedaan met onze RPi2 om volgende redenen:
 * De hardware is te traag voor bruteforcing
-* Het duurde een eeuwigheid om het ‘rockyou’ file te downloaden op school
-* Bruteforcing is redelijk zinloos met een “random” gegenereerd passwoord. Tegenwoordig is dit standaard (duurt te lang).
+* Het duurde een eeuwigheid om het Â‘rockyouÂ’ file te downloaden op school
+* Bruteforcing is redelijk zinloos met een Â“randomÂ” gegenereerd passwoord. Tegenwoordig is dit standaard (duurt te lang).
 Bruteforcing kan versneld worden door de GPU power te gebruiken.
 
 # 17/12/2015
@@ -205,7 +205,7 @@ Indien WiFi niet nodig is, kunnen we ook gewoon een switch verbinden met de lapt
 
 NOOT: Dit is niet mogelijk met mijn zwarte Phillips router omdat deze enkel beschikt over een ADSL WAN poort.
 
-NOOT2: Later (14/01/2016) zal blijken dat mijn thuis router (E4200) niet te kraken valt via ons WiFi script. Deze veel recentere router 'deauth' onze hacker constant. Waarschijnlijk omdat we zoveel ARP pakken sturen. Hierdoor duurt het véél langer voor je voldoende data hebt om het wachtwoord te kraken!
+NOOT2: Later (14/01/2016) zal blijken dat mijn thuis router (E4200) niet te kraken valt via ons WiFi script. Deze veel recentere router 'deauth' onze hacker constant. Waarschijnlijk omdat we zoveel ARP pakken sturen. Hierdoor duurt het vÃ©Ã©l langer voor je voldoende data hebt om het wachtwoord te kraken!
 
 Raspberry Pi 2 is niet beschikbaar. Geheugen kaart is kapot (voor de 2de keer...). 
 Ik had ook niet de mogelijkheid om Kali opnieuw op de SD kaart te zetten. Geen microsd kaart naar normale sdcard adapter meegenomen...
@@ -313,7 +313,7 @@ De configfile  bevind zich op
 > /etc/ettercap/etter.conf
 
 #### Probleem HTTPS + HSTS
-Etthercap zal niet zoals bij SSLStrip, https proberen "uiteschakelen". Niet zo'n heel groot probleem. De gebruiker zal een waarschuwing krijgen (rode melding) dat het certificaat niet geldig is en etc. Dit zal op elke https site gebeuren. De gewone gebruiker zal na een tijd geïriteerd geraken en gewoon op "toch doorgaan" klikken. Groot probleem! Ook nu hebben we nog steeds last van het HSTS verhaal...
+Etthercap zal niet zoals bij SSLStrip, https proberen "uiteschakelen". Niet zo'n heel groot probleem. De gebruiker zal een waarschuwing krijgen (rode melding) dat het certificaat niet geldig is en etc. Dit zal op elke https site gebeuren. De gewone gebruiker zal na een tijd geÃ¯riteerd geraken en gewoon op "toch doorgaan" klikken. Groot probleem! Ook nu hebben we nog steeds last van het HSTS verhaal...
 
 We zouden dit kunnen oplossen door te testen met een oudere browser (hebben we ook gedaan). Maar we wilden toch van die waarschuwing af! 
 
@@ -376,7 +376,7 @@ We hebben dit ook even op een WiFi netwerk getest en dit werkt ook! We hebben va
 
 # 29/12/2015
 
-Kali OS bevat standaard een versie van MITMf die via apt-get install MITMf geïnstaleerd kan worden.
+Kali OS bevat standaard een versie van MITMf die via apt-get install MITMf geÃ¯nstaleerd kan worden.
 Volgens de autheur van MITMf loopt deze versie echt wat achter op de laatste patches.
 
 We hadden gisteren af en toe problemen dat MITMf crashte en hoppen dit nu zo op te lossen...
@@ -402,7 +402,7 @@ Conclusie: Gigantisch gefaald / Tijdverspilling
 ### Met andere "modes" van MITMf gespeeld.
 
 #### Image rotate (upsidedownternet)
-Deze plugin zorgt ervoor dat elke afbeelding die ingeladen wordt 180° geroteerd wordt! Zo staat elke afbeeldingen op zijn kop. </br>
+Deze plugin zorgt ervoor dat elke afbeelding die ingeladen wordt 180Â° geroteerd wordt! Zo staat elke afbeeldingen op zijn kop. </br>
 [YoutTube demo](https://www.youtube.com/watch?v=HJ1nn-T98Vk)
 
 #### Screen
@@ -436,11 +436,11 @@ Printscreens kwijt, Kali opnieuw geinstalleerd. Zie volgende log!
 Conclusie, niet gelukt...
 
 ###Subterfuge
-Nadat het dus gefaald was om met MITMf om toegang te verkrijgen tot een computer met onze hackmachine. Zijn we opzoek gegaan naar alternatieven. Subterfuge was er één, deze was een tool waarmee je een server starten en alles kon instellen via je browser. Het zag er zeer belovend uit.
+Nadat het dus gefaald was om met MITMf om toegang te verkrijgen tot een computer met onze hackmachine. Zijn we opzoek gegaan naar alternatieven. Subterfuge was er Ã©Ã©n, deze was een tool waarmee je een server starten en alles kon instellen via je browser. Het zag er zeer belovend uit.
 
 [Tuturial](http://technovortex.blogspot.be/2013/08/getting-meterpreter-session-over-mitm.html)
 
-Het installeren ging tamelijk vlot, het instellen ook. Tot stap 7, vanaf we onze instellingen opslaan, crashte Subterfuge. We kregen constant "Djano" errors (multivaluedictkeyerror, Django “You have unapplied migrations”, ...)
+Het installeren ging tamelijk vlot, het instellen ook. Tot stap 7, vanaf we onze instellingen opslaan, crashte Subterfuge. We kregen constant "Djano" errors (multivaluedictkeyerror, Django Â“You have unapplied migrationsÂ”, ...)
 
 Door hard zoeken hebben we steeds iets kunnen oplossen maar elke keer we iets oplooste ging er iets anders stuk... Op een gegeven moment was ik zo beu dat we deze software over boord gegooigd hebben.
 
@@ -466,7 +466,7 @@ Blijkbaar is de *user-agent* van Internet Explorer al jaren die van Mozilla Fire
 
 Neem een kijkje om de user-agent string te zien van IE [Klik hier](http://www.useragentstring.com/pages/Internet%20Explorer/)
 
-Nu dacht ik er ineens aan dat ik niet de juiste versie .NET heb. In feite was .NET niet geïnstaleerrd (ik dacht dat dit standaard was vanaf Win XP). Na dit te installeren, werkte de exploit nadat je manueel de site bezocht waar deze opstond (192.168.2.7).
+Nu dacht ik er ineens aan dat ik niet de juiste versie .NET heb. In feite was .NET niet geÃ¯nstaleerrd (ik dacht dat dit standaard was vanaf Win XP). Na dit te installeren, werkte de exploit nadat je manueel de site bezocht waar deze opstond (192.168.2.7).
 
 Volgende keer:
 * DNSspoof, automatisch naar "gehackte" site gaan.
@@ -493,7 +493,7 @@ Dan heb ik besloten om Ettercap te gebruiken via de terminal. Maar al snel was d
 
 Ik ben ondertussen de tel kwijt geraakt hoevaak "werkende" tuturials niet werken bij ons. Blijkbaar is documentatie en compatibiliteit met oudere versies houden niet zo belangrijk. Ik (Brecht Carlier) was van plan hierover te bloggen, maar ik ben dit gewoon niet meer van plan. Als iemand binnen een jaar mijn post leest, is hij waarschijnlijk totaal niet meer correct....
 
-Ik heb hierna besloten Ettercap te verwijderen *apt-get remove ettercap-common* om hierna terug te installeren *apt-get install ettercap-common*. Het resultaat de grafische versie van ettercap werkt niet (start niet meer op). Maar geen probleem we waren ervan overtuigd dat het wel ging werken als we de laptop herstarten. Bleek jammer genoeg niet het geval te zijn. Na nog talloze apt-get commando's begon de moed in onze schoenen te zaken. Toen heb ik besloten om via de source code ettercap (GitHub) ettercap te installeren. Er gebeurde iets toen we het opstarten maar daarna had ik nog nooit zoveel errors op één scherm gezien.
+Ik heb hierna besloten Ettercap te verwijderen *apt-get remove ettercap-common* om hierna terug te installeren *apt-get install ettercap-common*. Het resultaat de grafische versie van ettercap werkt niet (start niet meer op). Maar geen probleem we waren ervan overtuigd dat het wel ging werken als we de laptop herstarten. Bleek jammer genoeg niet het geval te zijn. Na nog talloze apt-get commando's begon de moed in onze schoenen te zaken. Toen heb ik besloten om via de source code ettercap (GitHub) ettercap te installeren. Er gebeurde iets toen we het opstarten maar daarna had ik nog nooit zoveel errors op Ã©Ã©n scherm gezien.
 
 We waren het zo beu dat ik gewoon mijn laptop heb uitgezet. We hebben verder gedaan via Virtualbox. Daar hadden we wel al de etter.dns file staan, onze hoop steeg. Na alles juist te doen, werkte het nog steeds niet.
 
@@ -501,7 +501,7 @@ Na 5u verder hebben we letterlijk niets bereikt. We besluiten om even te stoppen
 
 Mijn volgende plan was om gewoon volledig Kali opnieuw te installeren op mijn laptop. En ook ineens goed. Alles wat op mijn laptop stond (Windows 10, Windows Server 2012 R2, Linux Mint, Kali) heb ik verwijderd. En enkel Kali opnieuw opgezet. Alles terug geconfigureerd (taal, toetsenbord, ...)  en we waren terug up and running. Alles werkt terug normaal buiten de print screen toets.
 
-Als eerste MITMf terug opnieuw geïnstalleerd (dit moet uiteraard eerst terug werken). En daarna alle stappen van Ettercap opnieuw uitgevoerd. Wonder boven wonder begonnen dinges te werken. Ik gebruikte eerst de standaard etter.dns file. Deze zal indien het IP adres van microsoft.com gevraagd wordt het IP doorsturen van linux.org (trololo). Wat er nu eigenlijk verkeerd was al dit tijd, we hebben geen idee.
+Als eerste MITMf terug opnieuw geÃ¯nstalleerd (dit moet uiteraard eerst terug werken). En daarna alle stappen van Ettercap opnieuw uitgevoerd. Wonder boven wonder begonnen dinges te werken. Ik gebruikte eerst de standaard etter.dns file. Deze zal indien het IP adres van microsoft.com gevraagd wordt het IP doorsturen van linux.org (trololo). Wat er nu eigenlijk verkeerd was al dit tijd, we hebben geen idee.
 
 Daarna hebben we de etter.dns file aangepast dat elke hostname zich bevind op onze Kali computer:
 
@@ -511,7 +511,7 @@ Nu voor we dit konden uittesten, moesten we uiteraard een webserver hebben draai
 
 > sudo service apache2 start
 
-Nu onze webserver opstaat, passen we de index.html file (/var/www/html/) aan naar onze eigen wensen. We verzinnen een tekst, en voegen een download link toe. Voorlopig laten we deze even naar niets wijzen (href) we hebben onze backdoor nog niet gecreëerd. We testen de site door te surfen naar localhost op onze hacker (Kali). Het ziet er goed uit. Ik test even de site manueel op de Windows XP computer (surfen naar 192.168.2.18). Dit werkt ook.
+Nu onze webserver opstaat, passen we de index.html file (/var/www/html/) aan naar onze eigen wensen. We verzinnen een tekst, en voegen een download link toe. Voorlopig laten we deze even naar niets wijzen (href) we hebben onze backdoor nog niet gecreÃ«erd. We testen de site door te surfen naar localhost op onze hacker (Kali). Het ziet er goed uit. Ik test even de site manueel op de Windows XP computer (surfen naar 192.168.2.18). Dit werkt ook.
 
 We voeren ons DNS spoof aanval uit. Eerst dus ARP spoofing opzetten. Even verfieren of dit werkt op de Win XP computer d.m.v. arp -a. Alles werkt normaal ik ben instaat om pakketjes te sniffen (ik zie een dhcp pakketje voorbij komen en wat achtergrond http verkeer). Ik zet de dnsspoof plugin op. Ik flush voor de zekerheid de dns cache op de WinXP computer. En surf dan naar microsoft.com en ja hoor daar staat hij onze eigen mooie site! 
 
@@ -541,7 +541,7 @@ We hebben geen poort ingesteld, dit betekend dat we gebruik maken van de standaa
 
 Bron:
 - [Forum met uitleg](https://evilzone.org/tutorials/metasploit-payload-tutorial/)
-- [Officiële documentatie](https://www.offensive-security.com/metasploit-unleashed/generating-payloads/)
+- [OfficiÃ«le documentatie](https://www.offensive-security.com/metasploit-unleashed/generating-payloads/)
 
 Nu we onze backdoor gemaakt hebben (ons gegeneerd .exe bestand) plaatsen we deze in de /var/www/html/ map. We vullen als path voor onze link (href) de naam van de backdoor in. Wij hebben deze win32update1536.exe genoemd. Indien je nu klikt op de link zal je de file downloaden.
 
@@ -556,7 +556,7 @@ We moeten nu onze metasploit zo instellen dat we luisteren naar onze backdoor.
 
 Ik heb geen poort ingesteld omdat we de standaard poort gebruikt hebben (4444). Vanaf nu luisteren we naar binnenkomende response van onze backdoor. We wachten dus tot iemand de file download.
 
-Ik test het uit. Je ziet dat de metasploit console reageert, maar hij kan geen meterpreter sessie starten. (Niets gaat van de 1ste keer). De fout was zeer bizar. De sessie starte maar stopte een paar minuten later van een timeout (EOFError). Ik kon maar één link vinden met een gelijkaardig probleem [LINK](https://community.rapid7.com/thread/2796). Maar de suggesties loste het probleem niet op.
+Ik test het uit. Je ziet dat de metasploit console reageert, maar hij kan geen meterpreter sessie starten. (Niets gaat van de 1ste keer). De fout was zeer bizar. De sessie starte maar stopte een paar minuten later van een timeout (EOFError). Ik kon maar Ã©Ã©n link vinden met een gelijkaardig probleem [LINK](https://community.rapid7.com/thread/2796). Maar de suggesties loste het probleem niet op.
 
 ![Error](http://i.imgur.com/v4dnrQV.jpg)
 
@@ -674,7 +674,7 @@ De SSID van mijn thuis netwerk ik "Wireless Carlier". Merk de spatie op. Indien 
 
 > xterm -e "airodump-ng -c $CHANNEL -w '$SSID' --bssid $BSSID $IFACE" &
 
-Daar lossen we ons probleem niet met op. Ik heb thuis elke adapter die ik maar kon vinden geprobeerd. Diegene van mijn thuisrouter was niet dezelfde. Die van mijn Belgacom modem wel. Alleen zitten we dan zonder internet en zonder tv. Vooral het internet had ik nodig. Heb ik maar besloten om een nieuwe adapter te gaan kopen in de Mediamarkt. Daar hadden ze diegene die ik nodig had. Hij koste €40 euro maar ik had niet veel keuze. Ik kon er een nieuwe WiFi router voor kopen maar ik was dan nooit 100% zeker of die ging werken met ons hackscript. Gelukkig was dit een universele adapter met verschillende spanningsniveau's ik kan hem dus zeker nog voor iets anders gebruiken.
+Daar lossen we ons probleem niet met op. Ik heb thuis elke adapter die ik maar kon vinden geprobeerd. Diegene van mijn thuisrouter was niet dezelfde. Die van mijn Belgacom modem wel. Alleen zitten we dan zonder internet en zonder tv. Vooral het internet had ik nodig. Heb ik maar besloten om een nieuwe adapter te gaan kopen in de Mediamarkt. Daar hadden ze diegene die ik nodig had. Hij koste 40 euro maar ik had niet veel keuze. Ik kon er een nieuwe WiFi router voor kopen maar ik was dan nooit 100% zeker of die ging werken met ons hackscript. Gelukkig was dit een universele adapter met verschillende spanningsniveau's ik kan hem dus zeker nog voor iets anders gebruiken.
 
 We hebben het nu terug getest en alles marcheert terug. Het enigste wat niet goed was is dat je het MAC adres van je draadloze adapter moet invullen, dit moet beter kunnen. We geven als parameter immers mee welke interface er gebruit moet worden. We hebben dit nog snel even geautomatiseerd.
 
@@ -690,7 +690,7 @@ We verwijderen nog de gegevens die we niet nodig hebben d.m.v. het ['cut' comman
 
 > 60:36:dd:99:ca:37
 
-Nu moesten we dit MAC adres nog opslagen in onze variable CMAC. Één van de manieren waarop we dit konden doen was via het dollarteken ($). We plaatsen ons commando tussen haaken en plaatsen het dollarteken ervoor. D.m.v. en echo even snel getest en inderdaad ons mac adres van de juiste interface is nu opgeslagen in de variable!
+Nu moesten we dit MAC adres nog opslagen in onze variable CMAC. Ã‰Ã©n van de manieren waarop we dit konden doen was via het dollarteken ($). We plaatsen ons commando tussen haaken en plaatsen het dollarteken ervoor. D.m.v. en echo even snel getest en inderdaad ons mac adres van de juiste interface is nu opgeslagen in de variable!
 
 Ons script is nu af, buiten nog wat commentaar toevoegen. We hebben er even een filmpje gemaakt.
 
@@ -710,9 +710,9 @@ Ik heb ook hard gemerkt dat mijn Linux kennis ondermaats is. Ik moet toegeven ik
 
 Ten slotte is het wel leuk en zeker de resultaten zijn leuk! Niet iedereen kan zeggen dat hij WiFi wachtwoorden kan hacken of FaceBook, Mircosoft, Blackboard wachtwoorden zou kunnen achter halen!
 
-Ik wil ook niets iets kwijt over de les. Ik vond een paar zaken jammer. Het is in het begin van het project duidelijk vermeld dat er geen Alfa's naar huis meegebracht mogen worden. Ik heb dan direct besloten er 2 te kopen. Ik moet er thuis aan kunnen werken! Nu blijkt dat eigenlijk in de praktijk veel mensen die van het school mee naar huis deden, vragen was allemaal niet nodig... Ik had sowieso een Alfa nodig voor privé doeleinden. Maar ik had liever er mee gewacht tot ik op het bot kon zoeken welke ik nodig had (er zijn er immers zeer veel). Ik heb er nu meer als 3u research in gestoken en heb misschien wel de verkeerde gekocht...
+Ik wil ook niets iets kwijt over de les. Ik vond een paar zaken jammer. Het is in het begin van het project duidelijk vermeld dat er geen Alfa's naar huis meegebracht mogen worden. Ik heb dan direct besloten er 2 te kopen. Ik moet er thuis aan kunnen werken! Nu blijkt dat eigenlijk in de praktijk veel mensen die van het school mee naar huis deden, vragen was allemaal niet nodig... Ik had sowieso een Alfa nodig voor privÃ© doeleinden. Maar ik had liever er mee gewacht tot ik op het bot kon zoeken welke ik nodig had (er zijn er immers zeer veel). Ik heb er nu meer als 3u research in gestoken en heb misschien wel de verkeerde gekocht...
 
-Ook vond ik het echt jammer (vooral onbegrijpbaar) dat we niet mochten blijven zitten in de project lokalen tijdens het labo van INF_SEC. We hadden die dag altijd 3u springuur. Dus stelden we ons hier volledig op. En onze opstelling was groot. Dat we daar niet mochten blijven zitten snap ik maar dat we dan in een lokaal moeten zitten waar het zo rumoerig is (2 / 2+ klassen) en mensen kinderachtig doen. Snap ik dan weer niet. Vooral er waren er veel die niets voor INF_SEC aan het doen waren maar die stonden dan op aanwezig, en wij die echt hard aan werken waren waren dan onafwezig. Ik ben blij dat in onze nieuw gebouw er zo'n project lokalen waren. We hebben hier super hard in gewerkt en de druk om te presteren lag hoog. We zaten immers met 2 à 3 groepen!
+Ook vond ik het echt jammer (vooral onbegrijpbaar) dat we niet mochten blijven zitten in de project lokalen tijdens het labo van INF_SEC. We hadden die dag altijd 3u springuur. Dus stelden we ons hier volledig op. En onze opstelling was groot. Dat we daar niet mochten blijven zitten snap ik maar dat we dan in een lokaal moeten zitten waar het zo rumoerig is (2 / 2+ klassen) en mensen kinderachtig doen. Snap ik dan weer niet. Vooral er waren er veel die niets voor INF_SEC aan het doen waren maar die stonden dan op aanwezig, en wij die echt hard aan werken waren waren dan onafwezig. Ik ben blij dat in onze nieuw gebouw er zo'n project lokalen waren. We hebben hier super hard in gewerkt en de druk om te presteren lag hoog. We zaten immers met 2 Ã  3 groepen!
 
 Als laatste wil ik zeker nog iets kwijt over Tinne. Ik ben meer dan te tevreden over Tinne haar werk. Ik durf zelf te stellen dat Tinne meer voorbereiding heeft gedaan dan alle andere partners waar ik mee heb samengewerkt dit semester te samen (buiten Matthew). Ik genoot er echt van hoeveel moeite ze heeft gedaan om zaken op te zoeken! Ook heb ik dankzij haar de kunst van documenteren ontdekt! In groepswerk is dit zeker belangrijk, en dankzij Tinne heb ik  er extra opgelet! Ook haar motivatie was zeer hoog. Zij is de enigste partner die tijdens de vakantie meer dan 1 keer is samengekomen om samen eraan te werken (zelfs 3 keer!). Kortom ik ben echt gelukkig met een partner zoals Tinne! Ik denk als ze zo gemotiveerd blijft ze verder geraakt als sommige mensen denken! Bedankt Tinne!
 
@@ -722,12 +722,12 @@ Ik ben blij dat we in het begin dit project gekozen hebben. Ik heb er heel veel 
 
 De keren dat iets werkte was het ook super leuk. Zo van die dingen zoals wachtwoorden van facebook te weten komen, kan niet zomaar iedereen. Dat maakt het net zo leuk, omdat het ons dan net wel lukt. Ik vind het jammer dat we niet met de nieuwste materialen konden werken omdat op de meeste bescherming gekomen is. Er zijn echter nog steeds mensen die gebruik maken van WEP of een te oude versie van firefox gebruiken dus is alles zeker niet voor niets geweest. Deze opdracht heeft me wel doen inzien hoe gemakkelijk het soms kan zijn om stoute dingen te doen.
 
-**Samenwerking**
+**Samenwerking** </br>
 Ik had in het begin een beetje schrik om met Brecht samen te werken, wegens groot niveau verschil. Uiteindelijk ben ik blij dat ik het toch gedaan heb. Ik heb van Brecht geleerd om door te zetten en niet op te geven. Iets dat ik in het verleden soms iets te snel deed. Ik vond het altijd heel leuk om met Brecht samen te werken. Ondanks dat we beiden wisten dat Brecht alles beter kan en meer weet, luisterde hij toch altijd naar wat ik te zeggen had. Moest ik de kans krijgen om dit project opnieuw te beginnen zou ik direct terug voor Brecht kiezen.
 
 
 ## Einde
-De bedoeling was dat je leerde samenwerken in groep en leerde plannen. Dit als voorbereiding voor onze bachelor proef in het volgende semester. Verder was dit ook een onderzoek naar het ontdekken van de Linux /Kali / Security wereld. We kunnen concluderen dat dit onderzoek zeer interessant was. Omdat we in groep werkten was het belangrijk dat we een goede taakverdeling hadden. Er mag geconcludeerd worden dat we dit goed gedaan hebben. We hebben een toonbaar project gemaakt, we zijn zelf blij met het resulaat. We mogen hier zeer trots op zijn! Verder was het ook een zeer leerrijk proces. Ééntje met up's en vooral veel downs, iets wat ieder project wel eens heeft. We hebben leren werken met Kali en onze hacking tools daar successvol in kunnen opbouwen. Ook hebben we geleerd dat je eerste en ook je tweede en derde idee niet steeds het beste idee is en dat je moet durven veranderen. De stap naar de laptop was gewaagd maar in functie van het project was het uiteindelijk een zeer goede beslissing! We willen ook graag lector T. Dams en M. Luyts bedanken voor de hulp als we die nodig hadden. Hun ervaring heeft ons zeker af en toe geholpen. Het was een leerrijk proces en we kijken uit naar onze bachelor proef.
+De bedoeling was dat je leerde samenwerken in groep en leerde plannen. Dit als voorbereiding voor onze bachelor proef in het volgende semester. Verder was dit ook een onderzoek naar het ontdekken van de Linux /Kali / Security wereld. We kunnen concluderen dat dit onderzoek zeer interessant was. Omdat we in groep werkten was het belangrijk dat we een goede taakverdeling hadden. Er mag geconcludeerd worden dat we dit goed gedaan hebben. We hebben een toonbaar project gemaakt, we zijn zelf blij met het resulaat. We mogen hier zeer trots op zijn! Verder was het ook een zeer leerrijk proces. Ã‰Ã©ntje met up's en vooral veel downs, iets wat ieder project wel eens heeft. We hebben leren werken met Kali en onze hacking tools daar successvol in kunnen opbouwen. Ook hebben we geleerd dat je eerste en ook je tweede en derde idee niet steeds het beste idee is en dat je moet durven veranderen. De stap naar de laptop was gewaagd maar in functie van het project was het uiteindelijk een zeer goede beslissing! We willen ook graag lector T. Dams en M. Luyts bedanken voor de hulp als we die nodig hadden. Hun ervaring heeft ons zeker af en toe geholpen. Het was een leerrijk proces en we kijken uit naar onze bachelor proef.
 
 We willen toch nog eens M. Luyts extra bedanken om ons te helpen bij ons bash script, zonder zijn kennis van Linux had het misschien niet gelukt. We zijn hier zeer dankvol voor! We wensen je veel succes met je verdere jaren op AP!!!
 
